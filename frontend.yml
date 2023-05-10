@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend-deployment
-  namespace: openfaas-fn
+  namespace: faas
   labels:
     app: frontend-app
 spec:
@@ -26,7 +26,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend-service
-  namespace: openfaas-fn
+  namespace: faas
 spec:
   internalTrafficPolicy: Cluster
   type: ClusterIP
