@@ -22,8 +22,8 @@ from utils import get_product_from_external_service
 
 mongo_client = MongoClient(host=mongodb_service_url,
         port=27017,
-        username='csit6000o',
-        password='csit6000o')
+        username='group404',
+        password='group404')
 
 mydb = mongo_client['cart']
 mycol = mydb['items']
