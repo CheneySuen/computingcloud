@@ -29,7 +29,7 @@ minikube start --kubernetes-version=v1.22.0 --driver=none
 在第一步服务部署完成之后再跑下面指令
 
 ```
-arkade install openfaas --basic-auth-password password123 --set=faasIdler.dryRun=false
+arkade install openfaas --basic-auth-password group404 --set=faasIdler.dryRun=false
 ```
 
 跑了第二步之后会报错，找到To retrieve the admin password, run:
@@ -43,7 +43,7 @@ kubectl port-forward -n openfaas svc/gateway 8080:8080 --address=0.0.0.0 &
 放着就行，再开一个Terminal
 
 ```
-kubectl apply -f ${REPO_HOME}/mongodb.yml
+kubectl apply -f ${REPO_HOME}/database.yml
 ```
 
 ```
@@ -59,10 +59,10 @@ kubectl port-forward -n openfaas-fn svc/frontend-service 80:8080 --address=0.0.0
 用秘钥替换password123
 
 ```
-faas-cli login --username admin --password password123
-cd ${REPO_HOME}/faas
+faas-cli login --username admin --password group404
+cd ${REPO_HOME}/backend
 faas-cli template store pull python3-http
-faas-cli deploy -f stack.yml
+faas-cli deploy -f backend.yml
 ```
 
 遇到问题reboot一下instance重新deploy就行
