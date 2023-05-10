@@ -8,13 +8,3 @@ db.createUser({
 db = db.getSiblingDB("cart")
 
 
-db.items.insert({
-    pk: "user@test",
-    sk: "product@test",
-    quantity: 100,
-    expirationTime: 10,
-    productDetail: {
-        name: "xxx",
-        price: 29
-    }
-})
