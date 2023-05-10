@@ -23,8 +23,8 @@ functions:
     build_args:
         TEST_ENABLED: false
     environment:
-        PRODUCT_SERVICE_URL: get-product.faas.svc.cluster.local
-        MONGODB_SERVICE_URL: mongodb-service.faas.svc.cluster.local
+        PRODUCT_SERVICE_URL: get-product.openfaas-fn.svc.cluster.local
+        MONGODB_SERVICE_URL: mongodb-service.openfaas-fn.svc.cluster.local
 
   checkout-cart:
     lang: python3-http
@@ -34,8 +34,8 @@ functions:
     build_args:
         TEST_ENABLED: false
     environment:
-        PRODUCT_SERVICE_URL: get-product.faas.svc.cluster.local
-        MONGODB_SERVICE_URL: mongodb-service.faas.svc.cluster.local
+        PRODUCT_SERVICE_URL: get-product.openfaas-fn.svc.cluster.local
+        MONGODB_SERVICE_URL: mongodb-service.openfaas-fn.cluster.local
 
   list-cart:
     lang: python3-http
@@ -45,8 +45,8 @@ functions:
     build_args:
         TEST_ENABLED: false
     environment:
-        PRODUCT_SERVICE_URL: get-product.faas.svc.cluster.local
-        MONGODB_SERVICE_URL: mongodb-service.faas.svc.cluster.local
+        PRODUCT_SERVICE_URL: get-product.openfaas-fn.svc.cluster.local
+        MONGODB_SERVICE_URL: mongodb-service.openfaas-fn.svc.cluster.local
 
   update-cart:
     lang: python3-http
@@ -56,7 +56,7 @@ functions:
     build_args:
         TEST_ENABLED: false
     environment:
-        PRODUCT_SERVICE_URL: get-product.faas.svc.cluster.local
-        MONGODB_SERVICE_URL: mongodb-service.faas.svc.cluster.local
+        PRODUCT_SERVICE_URL: get-product.openfaas-fn.svc.cluster.local
+        MONGODB_SERVICE_URL: mongodb-service.openfaas-fn.svc.cluster.local
 
 
