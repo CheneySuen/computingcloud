@@ -57,7 +57,7 @@ kubectl port-forward -n openfaas-fn svc/frontend-service 80:8080 --address=0.0.0
 
 放着就行，再开一个Terminal
 
-用秘钥替换password123
+用秘钥替换group404
 
 ```
 faas-cli login --username admin --password group404
