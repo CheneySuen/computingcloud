@@ -1,4 +1,4 @@
-db.auth('admin-user', 'admin-password')
+db.auth('user', 'password')
 db.createUser({
     user: 'group404',
     pwd: 'group404',
