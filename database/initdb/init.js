@@ -1,7 +1,7 @@
 db.auth('admin-user', 'admin-password')
 db.createUser({
-    user: 'csit6000o',
-    pwd: 'csit6000o',
+    user: 'group404',
+    pwd: 'group404',
     roles: ["root"],
 });
 
