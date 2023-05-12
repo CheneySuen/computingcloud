@@ -1,9 +1,9 @@
 import json
 import os
 
-dir = os.path.dirname(os.path.realpath(__file__))
+dir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
-with open(os.path.join(dir, 'common/product_list.json'), 'r') as product_list:
+with open(os.path.join(dir, 'util/product_list.json'), 'r') as product_list:
     product_list = json.load(product_list)
 
 HEADERS = {
