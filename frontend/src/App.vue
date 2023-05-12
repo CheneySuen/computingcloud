@@ -4,17 +4,34 @@
       <v-toolbar-title>
         <router-link tag="div" to="/">
           <a class="accent--text header font-weight-black">
-            DEMO
+            DEMO_Group404
             <span class="font-weight-thin subheading secondary--text">Store</span>
           </a>
         </router-link>
       </v-toolbar-title>
       <v-toolbar-items>
-<!--        <v-btn to="/auth" v-if="!currentUser" text class="ml-2">Sign In</v-btn>-->
-        <cart-button @drawerChange="toggleDrawer" />
-<!--        <div class="sign-out">-->
-<!--          <amplify-sign-out v-if="currentUser" class="Form&#45;&#45;signout pl-2"></amplify-sign-out>-->
-<!--        </div>-->
+<!-- fix -->
+    <div class="mode_btn">
+      <v-tooltip v-if="!$vuetify.theme.dark" bottom>
+        <template v-slot:activator="{ on }">
+          <v-btn v-on="on" color="info" small fab @click="darkMode">
+            <v-icon class="mr-1">mdi-moon-waxing-crescent</v-icon>
+          </v-btn>
+        </template>
+        <span>Dark Mode On</span>
+      </v-tooltip>
+
+      <v-tooltip v-else bottom>
+        <template v-slot:activator="{ on }">
+          <v-btn v-on="on" color="info" small fab @click="darkMode">
+            <v-icon color="yellow">mdi-white-balance-sunny</v-icon>
+          </v-btn>
+        </template>
+        <span>Dark Mode Off</span>
+      </v-tooltip>
+    </div>
+<!-- fix        -->
+ <cart-button @drawerChange="toggleDrawer" />
       </v-toolbar-items>
     </v-app-bar>
     <v-content>
@@ -62,7 +79,11 @@ export default {
     },
     toggleDrawer() {
       this.drawer = !this.drawer;
+    },
+    darkMode() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
     }
+   
   }
 };
 </script>
@@ -73,7 +94,11 @@ export default {
   font-size: 30px !important;
   text-decoration: none;
 }
-
+/*Fix adjust mode btn  */
+.mode_btn{
+  margin-top: "25%";
+  margin-left: "25%";
+}
 :root {
   /* Colors */
   --amazonOrange: #e88b01 !important;

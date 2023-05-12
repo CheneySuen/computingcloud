@@ -67,3 +67,13 @@ faas-cli deploy -f backend.yml
 ```
 
 遇到问题reboot一下instance重新deploy就行
+
+###Frontend
+```
+cd frontend
+sudo apt-get install npm
+如果 遇到Error: Cannot find module '@vue/cli-plugin-babel'
+npm install babel-plugin-import -D
+local run cmd:
+npm run-script serve
+```
