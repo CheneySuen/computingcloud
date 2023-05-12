@@ -1,3 +1,11 @@
+<!--
+ * @Author: XinyueShu xshuac@connect.hk.ust
+ * @Date: 2023-05-13 01:43:42
+ * @LastEditors: XinyueShu xshuac@connect.hk.ust
+ * @LastEditTime: 2023-05-13 01:57:47
+ * @FilePath: /computingcloud/frontend/src/components/Product.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <template>
   <v-card outlined class="flexcard" height="100%">
     <v-row class="pb-0" dense>
@@ -10,6 +18,11 @@
         <p class="text-truncate body-2 pt-2 pb-0 pr-2 grow text-right mb-1">{{product.category}}</p>
       </v-col>
     </v-row>
+    <!-- fix start-->
+    <!-- <div>
+      <img src="https://ibb.co/4tkP0Zs" width="32px" height="32px"/>
+    </div> -->
+    <!--fix end-->
     <v-card-text class="pt-0 pl-4 pb-0">
       <p class="pt-0 pb-0 mb-0 body-2">"{{product.description}}"</p>
       <p class="price pt-0 pb-0 grow accent--text mb-1">${{getPrice(product)}}</p>
