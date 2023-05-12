@@ -3,8 +3,8 @@ import json
 import os
 import sys
 
-script_dir = os.path.dirname(__file__)
-mymodule_dir = os.path.join(script_dir, 'common')
+script_dir = os.path.dirname(os.path.dirname(__file__))
+mymodule_dir = os.path.join(script_dir, 'util')
 sys.path.append(mymodule_dir)
 
 from utils import get_product_from_external_service
