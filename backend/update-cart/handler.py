@@ -4,8 +4,8 @@ import sys
 
 from pymongo import MongoClient
 
-script_dir = os.path.dirname(__file__)
-mymodule_dir = os.path.join(script_dir, 'common')
+script_dir = os.path.dirname(os.path.dirname(__file__))
+mymodule_dir = os.path.join(script_dir, 'util')
 sys.path.append(mymodule_dir)
 
 product_service_url = os.environ["PRODUCT_SERVICE_URL"]
