@@ -96,8 +96,8 @@ export default {
 }
 /*Fix adjust mode btn  */
 .mode_btn{
-  margin-top: "25%";
-  margin-left: "25%";
+  margin-top: 25%;
+  margin-left: 25%;
 }
 :root {
   /* Colors */

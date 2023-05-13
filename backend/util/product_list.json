@@ -12,7 +12,8 @@
             "width": 905
         },
         "pictures": [
-            "http://placehold.it/32x32"
+            //fix "http://placehold.it/32x32"
+            "https://w7.pngwing.com/pngs/983/762/png-transparent-strawberry-fruit-strawberry-strawberry-clipart-thumbnail.png"
         ],
         "price": 716,
         "productId": "4c1fadaa-213a-4ea8-aa32-58c217604e3c",
