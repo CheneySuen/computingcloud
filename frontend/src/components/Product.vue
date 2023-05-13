@@ -2,7 +2,7 @@
  * @Author: XinyueShu xshuac@connect.hk.ust
  * @Date: 2023-05-13 01:43:42
  * @LastEditors: XinyueShu xshuac@connect.hk.ust
- * @LastEditTime: 2023-05-13 19:56:17
+ * @LastEditTime: 2023-05-13 20:05:51
  * @FilePath: /computingcloud/frontend/src/components/Product.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -18,7 +18,7 @@
         <p class="text-truncate body-2 pt-2 pb-0 pr-2 grow text-right mb-1">{{product.category}}</p>
       </v-col>
     </v-row>
-    <div>
+    <div class="pic">
       <img :src="getPic(product)" width="32px" height="32px"/>
     </div>
     <v-card-text class="pt-0 pl-4 pb-0">
@@ -79,6 +79,9 @@ export default {
 </script>
 
 <style scoped>
+.pic{
+  margin-left: 50%;
+}
 .flexcard {
   position: relative;
   padding-bottom: 50px;
