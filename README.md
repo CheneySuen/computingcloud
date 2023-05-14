@@ -63,6 +63,7 @@ kubectl port-forward -n openfaas-fn svc/frontend-service 80:8080 --address=0.0.0
 faas-cli login --username admin --password group404
 cd ${REPO_HOME}/backend
 faas-cli template store pull python3-http
+faas-cli build -f backend.yml
 faas-cli deploy -f backend.yml
 ```
 
