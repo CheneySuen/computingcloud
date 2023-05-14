@@ -69,7 +69,7 @@ faas-cli build -f backend.yml
 
 遇到问题reboot一下instance重新deploy就行
 
-###Frontend
+### Frontend
 ```
 cd frontend
 sudo apt-get install npm
