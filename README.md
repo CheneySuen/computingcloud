@@ -64,7 +64,7 @@ faas-cli login --username admin --password group404
 cd ${REPO_HOME}/backend
 faas-cli template store pull python3-http
 faas-cli build -f backend.yml
-faas-cli deploy -f backend.yml
+#faas-cli deploy -f backend.yml
 ```
 
 遇到问题reboot一下instance重新deploy就行
