@@ -24,74 +24,71 @@ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 # Install kubectl
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
 # Install Docker
 sudo apt-get update && sudo apt-get install docker.io -y
+
 # Install socat
 sudo apt-get install socat -y
+
 # Install conntrack
 sudo apt-get install -y conntrack
+
 # Install arkade
 curl -sSL https://get.arkade.dev | sudo -E sh
+
 # Install openfaas
 curl -sL https://cli.openfaas.com | sudo sh
 ```
 
 ### Deploy
-
-**全部需要sudo** 
-
+Become a root user.
+```
+sudo -i
+```
+Start Minikube
 ```
 minikube start --kubernetes-version=v1.22.0 --driver=none
 ```
 
-在第一步服务部署完成之后再跑下面指令
+Deploy Openfaas
 
 ```
 arkade install openfaas --basic-auth-password group404 --set=faasIdler.dryRun=false
 ```
 
-跑了第二步之后会报错，找到To retrieve the admin password, run:
 
-echo $(kubectl -n openfaas get secret basic-auth -o jsonpath="{.data.basic-auth-password}" | base64 --decode)，执行命令得到秘钥。
-
+port forwarding for Openfaas
 ```
 kubectl port-forward -n openfaas svc/gateway 8080:8080 --address=0.0.0.0 &
 ```
+In this way, the openfaas functions can be accessed through http://{Host IP}:8080/function/{function name}
 
-放着就行，再开一个Terminal
-
+ Please use the git clone command to copy the code to the local repository, and then switch to the folder of the local repository.
+ Deploy database
 ```
-kubectl apply -f ${REPO_HOME}/database.yml
+kubectl apply -f /database.yml
 ```
-
+Deploy frontend
 ```
-kubectl apply -f ${REPO_HOME}/frontend.yml
+kubectl apply -f /frontend.yml
 ```
-
+port forwarding for frontend
 ```
 kubectl port-forward -n openfaas-fn svc/frontend-service 80:8080 --address=0.0.0.0 &
 ```
+In this way, the openfaas functions can be accessed through http://{Host IP}
 
-放着就行，再开一个Terminal
+Deploy Openfaas Functions
 
-用秘钥替换group404
-
+To retrieve the admin password, run:
 ```
-faas-cli login --username admin --password group404
-cd ${REPO_HOME}/backend
+echo $(kubectl -n openfaas get secret basic-auth -o jsonpath="{.data.basic-auth-password}" | base64 --decode)
+```
+```
+faas-cli login --username admin --password <your password>
+cd /backend
 faas-cli template store pull python3-http
 faas-cli build -f backend.yml
 #faas-cli deploy -f backend.yml
-```
-
-遇到问题reboot一下instance重新deploy就行
-
-### Frontend
-```
-cd frontend
-sudo apt-get install npm
-如果 遇到Error: Cannot find module '@vue/cli-plugin-babel'
-npm install babel-plugin-import -D
-local run cmd:
-npm run-script serve
 ```
