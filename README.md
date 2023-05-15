@@ -8,6 +8,7 @@
 |SUN, Yichen  |20879782        |ysundu@connect.ust.hk       |       |
 ### Serverless Shopping Cart
 For our group project, we re-implemented the AWS Serverless Shopping Cart project, and have made replacement of the internal components, including the DynamoDB to MongoDB, and AWS Lambda to OpenFaaS. Besides, we also used the Docker container technology to implement the serverless application deployment, allowing the application to run on different environments with Kubernetes cluster. We also implemented a frontend UI with Vue to visualize the application. The application supports shopping cart functions including add products into the shopping cart, removing products from shopping cart, viewing products in shopping cart and reading information about shopping cart. 
+
 ![overview](/overview.jpg)
 ### Environment Setup
 This project needs to be setup in AWS. We choose Ubuntu Server 22.04 LTS (HVM), SSD Volume Type as AMI (Amazon Machine Image) and m5.large as the instance type. And We configure security group as followed.
