@@ -63,7 +63,9 @@ Port forwarding for Openfaas gateway
 kubectl port-forward -n openfaas svc/gateway 8080:8080 --address=0.0.0.0 &
 ```
 In this way, the openfaas functions can be accessed through http://{Host IP}:8080/function/{function name}
-Please use the git clone command to copy the code to the local repository, and then switch to the folder of the local repository.<br>
+
+Please use the git clone command to copy the code to the local repository, and then switch to the folder of the local repository.
+
 Deploy database
 ```
 kubectl apply -f /database.yml
