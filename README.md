@@ -38,7 +38,7 @@ sudo apt-get install -y conntrack
 # Install arkade
 curl -sSL https://get.arkade.dev | sudo -E sh
 
-# Install openfaas
+# Install Openfaas
 curl -sL https://cli.openfaas.com | sudo sh
 ```
 
@@ -59,11 +59,11 @@ arkade install openfaas --basic-auth-password group404 --set=faasIdler.dryRun=fa
 ```
 
 
-Port forwarding for Openfaas gateway
+Port forwarding for OpenFaas functions
 ```
 kubectl port-forward -n openfaas svc/gateway 8080:8080 --address=0.0.0.0 &
 ```
-In this way, the openfaas functions can be accessed through http://{Host IP}:8080/function/{function name}
+In this way, the Openfaas functions can be accessed through http://{Host IP}:8080/function/{function name}
 
 Please use the git clone command to copy the code to the local repository, and then switch to the folder of the local repository.
 
