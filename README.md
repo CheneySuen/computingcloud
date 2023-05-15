@@ -15,22 +15,23 @@ This project needs to be setup in AWS. We choose Ubuntu Server 22.04 LTS (HVM), 
 | ----------- | ----------- | ----------- | ----------- |
 | All traffic				     | All       | All     |     0.0.0.0/0  |
 ### Preparation
-
+Run the following commands to satisfy the requirements.
 ```
+# Install Minikube
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
-```
-
-```
+# Install kubectl
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-```
-
-```
+# Install Docker
 sudo apt-get update && sudo apt-get install docker.io -y
+# Install socat
 sudo apt-get install socat -y
+# Install conntrack
 sudo apt-get install -y conntrack
+# Install arkade
 curl -sSL https://get.arkade.dev | sudo -E sh
+# Install openfaas
 curl -sL https://cli.openfaas.com | sudo sh
 ```
 
