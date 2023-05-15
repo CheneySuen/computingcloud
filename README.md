@@ -80,14 +80,10 @@ kubectl port-forward -n openfaas-fn svc/frontend-service 80:8080 --address=0.0.0
 ```
 In this way, the openfaas functions can be accessed through http://{Host IP}
 
-Deploy Openfaas Functions
-
-To retrieve the admin password, run:
-```
-echo $(kubectl -n openfaas get secret basic-auth -o jsonpath="{.data.basic-auth-password}" | base64 --decode)
-```
 Deploy backend
 ```
+# retrieve the admin password
+echo $(kubectl -n openfaas get secret basic-auth -o jsonpath="{.data.basic-auth-password}" | base64 --decode)
 faas-cli login --username admin --password <your password>
 cd /backend
 faas-cli template store pull python3-http
